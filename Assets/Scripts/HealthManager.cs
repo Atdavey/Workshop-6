@@ -45,6 +45,7 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         ResetHealthToStarting();
+        onDeath.AddListener(incrementscore);
     }
 
     public void ResetHealthToStarting()
@@ -55,5 +56,9 @@ public class HealthManager : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         CurrentHealth -= damage;
+    }
+
+    void incrementscore(){
+        IncrementScore.incrementscore(100);
     }
 }
